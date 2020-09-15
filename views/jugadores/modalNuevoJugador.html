@@ -1,0 +1,33 @@
+<div class="modal-header">
+  <h1>Nuevo Jugador</h1>
+</div>'
+<div class="modal-body">
+    <div class="form-group">
+        <label>Nombres</label>
+        <input type="text" placeholder="Ingrese nombre" name="nombre_jugador" class="form-control" ng-model="newJugador.nombre_jugador">
+    </div>
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" placeholder="Ingrese apellido" name="apellido_jugador" class="form-control" ng-model="newJugador.apellido_jugador">
+    </div>
+    <div class="form-group">
+        <label>Nickname</label>
+        <input type="text" placeholder="Ingrese nickname" name="nickname_jugador" class="form-control" ng-model="newJugador.nickname_jugador">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" placeholder="Ingrese el Email" name="email" class="form-control" ng-model="newJugador.email">
+    </div>
+    <div class="form-group">
+        <label>Numero de Telefono</label>
+        <input type="text" placeholder="Ingrese su numero de contacto" name="telefono_jugador" class="form-control" ng-model="newJugador.telefono_jugador">
+    </div>
+    <div class="form-group">
+        <label>Fecha Nacimiento</label>
+        <input type="date"  name="fecha_nacimiento" class="form-control" ng-model="newJugador.fecha_nacimiento">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+    <button type="button" class="btn btn-primary" ng-click="guardar(newJugador)"> Guardar</button>
+</div>

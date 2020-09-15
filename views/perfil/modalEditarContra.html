@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h1>Editar Contraseña</h1>
+</div>
+<form name="valida">
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Confirme su contraseña actual</label>
+            <input type="password" placeholder="Ingrese su contraseña actual" name="pwdact" class="form-control" ng-model="editarContra.pwdact" ng-required="true" >
+            <p class="help-block" ng-show="valida.pwdact.$dirty && valida.pwdact.$invalid">Campo obligatorio</p>
+        </div>
+        <div class="form-group">
+            <label>Nueva contraseña</label>
+            <input type="password" placeholder="Ingrese su nueva contraseña" name="pwdnew" class="form-control" ng-model="editarContra.pwdnew" ng-required="true">
+            <p class="help-block" ng-show="valida.pwdnew.$dirty && valida.pwdnew.$invalid">Campo obligatorio</p>
+        </div>
+        <div class="form-group">
+            <label>Confirme su nueva contraseña</label>
+            <input type="password" placeholder="Confirme su nueva contraseña" name="pwdnewconf" class="form-control" ng-model="editarContra.pwdnewconf" ng-required="true">
+            <p class="help-block" ng-show="valida.pwdnewconf.$dirty && valida.pwdnewconf.$invalid">Campo obligatorio</p>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+        <button type="button" class="btn btn-primary" ng-click="modificar2(editarContra)" ng-disabled="valida.$invalid"> Guardar</button>
+    </div>
+</form>

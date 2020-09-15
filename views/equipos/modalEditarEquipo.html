@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h1>Editar Equipo</h1>
+</div>'
+<div class="modal-body">
+    <div class="form-group">
+        <label>Nombre del Equipo</label>
+        <input type="text" placeholder="Ingrese el nombre" name="nombre_equipo" class="form-control" ng-model="editarEquipo.nombre">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+    <button type="button" class="btn btn-primary" ng-click="modificar(editarEquipo)">Guardar</button>
+</div>

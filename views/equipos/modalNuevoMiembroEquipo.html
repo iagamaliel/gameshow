@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h1>Asignar Miembros al Equipo</h1>
+</div>'
+<div class="modal-body">
+    <div class="form-group">
+        <label>Seleccione miembros del Equipo</label>
+        <select class="form-control" multiple name="miembros_equipo" ng-model="newMiembroEquipo.miembros" ng-options="jugador.codJugadores as jugador.nombre_jugador + '-' +  jugador.apellido_jugador for jugador in jugadores | orderBy:'nombre_jugador'">
+        </select>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+    <button type="button" class="btn btn-primary" ng-click="guardar(newMiembroEquipo)"> Guardar</button>
+</div>

@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <h1>Editar Torneo</h1>
+</div>
+<form name="valida">
+<div class="modal-body">
+    <div class="form-group">
+        <label>Nombre del torneo</label>
+        <input type="text" placeholder="Ingrese el nombre del torneo" name="nombre_torneo" class="form-control" ng-model="editarTorneo.Nombre" ng-required="true">
+        <p class="help-block" ng-show="valida.nombre_torneo.$touched && valida.nombre_torneo.$invalid">Debe ingresar un nombre valido</p>
+    </div>
+    <div class="form-group">
+        <label>Tipo de torneo</label>
+        <select class="form-control" name="tipo_torneo" ng-model="editarTorneo.tipo_torneo" ng-required="true">
+            <option value="">Seleccionar</option>
+            <option value="Equipos">Equipos</option>
+            <option value="Solitario">Solitario</option>
+        </select>
+        <p class="help-block" ng-show="valida.tipo_torneo.$touched && valida.tipo_torneo.$error.required">Debe escoger el tipo de torneo</p>
+    </div>
+    <div class="form-group">
+        <label>Seleccione el juego</label>
+        <select class="form-control" name="juego" ng-model="editarTorneo.id_juego" ng-options="juego.id_juego as juego.nombre_juego for juego in juegos | orderBy:'nombre_juego'" ng-required="true">
+            <option value="">seleccione</option>
+        </select>
+        <p class="help-block" ng-show="valida.juego.$dirty && valida.juego.$error.required">Campo obligatorio</p>
+    </div>
+    <div class="form-group">
+        <label>Numero de participantes</label>
+        <input type="text" placeholder="Ingrese un numero entre 2 y 64" name="numero_participantes" class="form-control" ng-model="editarTorneo.num_participantes">
+    </div>
+    <div class="form-group">
+        <label>Tipo de torneo</label>
+        <select class="form-control" name="estado_torneo" ng-model="editarTorneo.activo" ng-required="true">
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+        </select>
+        <p class="help-block" ng-show="valida.estado_torneo.$touched && valida.estado_torneo.$error.required">Debe escoger el estado del torneo</p>
+    </div>
+    <div class="form-group">
+        <label>Descripcion del torneo</label>
+        <input type="text" placeholder="Ingrese los detalles del torneo" name="descripcion" class="form-control" ng-model="editarTorneo.descripcion" ng-required="true">
+        <p class="help-block" ng-show="valida.descripcion_torneo.$touched && valida.descripcion_torneo.$error.required">Este campo es obligatorio</p>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" ng-model="editarTorneo.round_robin">
+        <label>Round Robin</label>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+    <button type="button" class="btn btn-primary" ng-click="modificar(editarTorneo)" ng-disabled="valida.$invalid"> Guardar</button>
+</div>
+</form>

@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h1>Mis equipos {{infoTorneo.Nombre}}</h1>
+</div>
+<form name="valida">
+<div class="modal-body">
+    <label>Seleccione el equipo</label>
+    <select class="form-control" name="equipos" ng-model="newEquipo" ng-options="miequipo as miequipo.nombre for miequipo in misequipos | orderBy:'nombre'" ng-change="getTorneo(newTorneo)" ng-required="true" >
+        
+    </select>
+    </div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModalEquipo()">Cancelar</button>
+    <button type="button" class="btn btn-primary" ng-click="registrarEquipo(newEquipo)" ng-disabled="valida.$invalid">Aceptar</button>
+</div>
+</form>

@@ -1,0 +1,16 @@
+<div class="modal-header">
+  <h1>Nuevo Juego</h1>
+</div>
+<form name="valida">
+<div class="modal-body">
+    <div class="form-group">
+        <label>Nombre del juego</label>
+        <input type="text" placeholder="Ingrese el nombre del juego" name="nombre_juego" class="form-control" ng-model="newJuego.nombre_juego" ng-required="true">
+        <p class="help-block" ng-show="valida.nombre_juego.$touched && valida.nombre_juego.$error.required">Debe ingresar un nombre valido</p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+    <button type="button" class="btn btn-primary" ng-click="guardar(newJuego)" ng-disabled="valida.$invalid"> Guardar</button>
+</div>
+</form>

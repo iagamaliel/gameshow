@@ -1,0 +1,70 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Jugadores</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#/jugadores">Inicio</a>
+            </li>
+            <li>
+                <a>Jugadores</a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="jugadorCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Listado de jugadores</h5>
+                    <div class="ibox-tools">
+                        <a href="" class="btn btn-primary btn-xs" ng-click="nuevoJugador()">Nuevo jugador</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row m-b-sm m-t-sm">
+                        <div class="col-lg-12">
+                            <div class="input-group"><input type="text" placeholder="Buscar" class="input-sm form-control" ng-model="query"> <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-primary">Buscar</button> </span>
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="project-list">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nombres</th>
+                                    <th>Apellidos</th>
+                                    <th>Nickname</th>
+                                    <th>Email</th>
+                                    <th>Telefono</th>
+                                    <th>Fecha Nacimiento</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="jugador in jugadores| filter: query">
+                                    <td class="project-title"><span class="pie">{{jugador.nombre_jugador}}</span></td>
+                                    <td class="project-title">{{jugador.apellido_jugador}}</td>
+                                    <td class="project-title">{{jugador.nickname_jugador}}</td>
+                                    <td class="project-title">{{jugador.email}}</td>
+                                    <td class="project-title">{{jugador.telefono_jugador}}</td>
+                                    <td class="project-title">{{jugador.fecha_nacimiento}}</td>
+                                    <td class="project-title"><span class="label {{cssEstado(jugador.activo)}}">{{etiquetaEstado(jugador.activo)}}</span></td>
+                                    <td class="text-navy">
+                                        <button type="button" class="btn btn-xs btn-default" ng-click="seleccionarJugador(jugador)">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

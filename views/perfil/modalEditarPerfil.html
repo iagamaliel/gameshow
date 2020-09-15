@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <h1>Editar Perfil</h1>
+</div>
+<form name="valida">
+<div class="modal-body">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" placeholder="Ingrese su nombre" name="nombre_perfil" class="form-control" ng-model="editarPerfil.nombre_jugador" ng-required="true" ng-minlength="2" ng-pattern="/^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$/">
+        <p class="help-block" ng-show="valida.nombre_perfil.$dirty && valida.nombre_perfil.$error.minlength">Debe ser un minimo de 2 letras</p>
+        <p class="help-block" ng-show="valida.nombre_perfil.$dirty && valida.nombre_perfil.$invalid">Debe ingresar su primer y segundo nombre o solo su primer nombre</p>
+    </div>
+    <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" placeholder="Ingrese su apellido" name="apellido_perfil" class="form-control" ng-model="editarPerfil.apellido_jugador" ng-required="true" ng-minlength="2" ng-pattern="/^(([A-za-z]+[\s]{1}[A-za-z]+)|([A-Za-z]+))$/">
+        <p class="help-block" ng-show="valida.apellido_perfil.$dirty && valida.apellido_perfil.$error.minlength">Debe ser un minimo de 2 letras</p>
+        <p class="help-block" ng-show="valida.apellido_perfil.$dirty && valida.apellido_perfil.$invalid">Debe ingresar su primer y segundo apellido o solo su primer apellido</p>
+    </div>
+    <div class="form-group">
+        <label>Nickname</label>
+        <input type="text" placeholder="Ingrese su nickname dentro del juego" name="nickname_perfil" class="form-control" ng-model="editarPerfil.nickname_jugador">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="Ingrese su correo electronico" name="email_perfil" class="form-control" ng-model="editarPerfil.email" ng-pattern="/^[a-z0-9_\.-]+@[a-z0-9_-]+\.[a-z]{2,3}(\.[a-z]{2})?$/">
+        <p class="help-block" ng-show="valida.email_perfil.$invalid">Ingrese un correo valido</p>
+    </div>
+    <div class="form-group">
+        <label>Numero de Telefono</label>
+        <input type="number" ng-maxlength="15" placeholder="Ingrese su numero de telefono" name="telefono_perfil" class="form-control" ng-model="editarPerfil.telefono_jugador" ng-required="true" ng-minlength="6" ng-pattern="/^[0-9]*$/">
+        <p class="help-block" ng-show="valida.telefono_perfil.$dirty && valida.telefono_perfil.$error.minlength">Debe ser un minimo de 6 numeros</p>
+        <p class="help-block" ng-show="valida.telefono_perfil.$dirty && valida.telefono_perfil.$invalid">Ingrese un numero de telefono valido/p>
+    </div>
+    <div class="form-group">
+        <label>Pais</label>
+        <input type="text" placeholder="Ingrese su pais de residencia" name="pais_perfil" class="form-control" ng-model="editarPerfil.pais_jugador" ng-required="true">
+        <p class="help-block" ng-show="valida.pais_perfil.$dirty && valida.pais_perfil.$error.required">Campo obligatorio</p>
+    </div>
+    <div class="form-group">
+        <label>Direccion</label>
+        <input type="text" placeholder="Ingrese su direccion de residencia" name="direccion_perfil" class="form-control" ng-model="editarPerfil.direccion">
+    </div>
+    <div class="form-group">
+        <label>Fecha Nacimiento</label>
+        <input type="date"  name="fecha_nacimiento" class="form-control" ng-model="editarPerfil.fecha_nacimiento" ng-required="true">
+        <p class="help-block" ng-show="valida.fecha_nacimiento.$dirty && valida.fecha_nacimiento.$error.required">Campo obligatorio</p>
+        <p class="help-block" ng-show="valida.fecha_nacimiento.$dirty && valida.fecha_nacimiento.$invalid">Fecha invalida</p>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+    <button type="button" class="btn btn-primary" ng-click="modificar(editarPerfil)" ng-disabled="valida.$invalid"> Guardar</button>
+</div>
+</form>

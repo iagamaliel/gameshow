@@ -1,0 +1,41 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Brackets</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+            <li>
+                <a>Brackets</a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="bracketCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Brackets de los torneos</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="project-list">
+                        <label>Seleccione el torneo</label>
+                        <select class="form-control" name="torneos" ng-model="newTorneo" ng-options="torneo as torneo.Nombre for torneo in torneos | orderBy:'Nombre'" ng-change="getTorneo(newTorneo)">
+                            <option value="">Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="playoff">
+    </div>
+
+    <div class="playoffround">
+    </div>
+</div>

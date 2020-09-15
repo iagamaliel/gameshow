@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h1>Seleccione su Avatar</h1>
+</div>
+<form name="valida">
+    <div class="modal-body">
+        <select class="image-picker show-html">
+            <optgroup label="Avatars disponibles">
+                <option class="img-circle img-responsive" data-img-src="../img/blaze.png" value="blaze">Blaze</option>
+                <option class="img-circle img-responsive" data-img-src="../img/morg.png" value="morg">Morg</option>
+                <option class="img-circle img-responsive" data-img-src="../img/base.jpg" value="base">Base</option>
+                <option class="img-circle img-responsive" data-img-src="../img/tali.png" value="tali">Tali</option>
+        </optgroup>
+     </select>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+        <button type="button" class="btn btn-primary" ng-click="modificar3()"> Guardar</button>
+    </div>
+    <script>
+        $('.image-picker').imagepicker();
+    </script>
+</form>
+

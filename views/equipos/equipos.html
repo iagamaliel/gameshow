@@ -1,0 +1,62 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Equipos</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#/equipos">Inicio</a>
+            </li>
+            <li>
+                <a>Equipos</a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="equipoCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Listado de equipos</h5>
+                    <div class="ibox-tools">
+                        <a href="" class="btn btn-primary btn-xs" ng-click="nuevoEquipo()">Nuevo Equipo</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row m-b-sm m-t-sm">
+                        <div class="col-lg-12">
+                            <div class="input-group"><input type="text" placeholder="Buscar" class="input-sm form-control" ng-model="query"> <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-primary">Buscar</button> </span>
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="project-list">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="equipo in equipos | filter: query track by $index" >
+                                    <td class="project-title"><span>{{equipo.nombre}}</span></td>
+                                    <td class="project-title"><span class="label {{cssEstado(equipo.activo)}}">{{etiquetaEstado(equipo.activo)}}</span></td>
+                                    <td class="text-navy">
+                                        <button type="button" class="btn btn-xs btn-default" ng-click="seleccionarEquipo(equipo)">Editar</button>
+                                        <button type="button" class="btn btn-xs btn-default" ng-click="asignarMiembros(equipo)">Agregar Participntes</button>
+                                        <button type="button" class="btn btn-xs btn-default" ng-click="verMiembros(equipo)">Ver Participntes</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

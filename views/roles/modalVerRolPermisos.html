@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h1>Listado de Módulos con Accesos </h1>
+</div>'
+<div class="modal-body">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Módulos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="modulo in modulosPermisos | filter: query track by $index" >
+                <td class="project-title"><span>{{modulo}}</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+</div>

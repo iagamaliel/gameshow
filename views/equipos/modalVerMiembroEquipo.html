@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h1>Listado de Miembros del Equipo {{nombreEquipo}} </h1>
+</div>'
+<div class="modal-body">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>NickName</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="miembro in miembrosEquipo | filter: query track by $index" >
+                <td class="project-title"><span>{{miembro.nombre_jugador}}</span></td>
+                <td class="project-title"><span>{{miembro.apellido_jugador}}</span></td>
+                <td class="project-title"><span>{{miembro.nickname_jugador}}</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline btn-default" ng-click="cerrarModal()">Cancelar</button>
+</div>

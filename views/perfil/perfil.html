@@ -1,0 +1,85 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Perfil</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#/">Inicio</a>
+            </li>
+            <li>
+                <a>Perfil</a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="perfilCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <div class="ibox-tools">
+                        <a href="" class="btn btn-primary btn-xs" ng-click="seleccionarImg(securityDataUser)">Cambiar Avatar</a>
+                        <a href="" class="btn btn-primary btn-xs" ng-click="cambiarContra(securityDataUser)">Cambiar contraseña</a>
+                        <a href="" class="btn btn-primary btn-xs" ng-click="seleccionarPerfil(securityDataUser)">Editar Perfil</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="container">
+                        <div class="panel-body">
+                            <div class="box box-info">
+                                <div class="box-body">
+                                    <div class="col-sm-6">
+                                        <div  align="center"> <img alt="User Pic" ng-src="{{securityDataUser.img_jugador}}" id="profile-image1" class="img-circle img-responsive" >
+
+                                            <input id="profile-image-upload" class="hidden" type="file" >
+
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4 style="color:#00b1b1;">{{securityDataUser.usuario}} </h4></span>
+                                        <span><p>{{securityDataUser.nombre_rol}} </p></span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <hr style="margin:5px 0 5px 0;">
+
+
+                                    <div class="col-sm-5 col-xs-6 tital " >Nombre:</div><div class="col-sm-7 col-xs-6 ">{{securityDataUser.nombre_jugador}}</div>
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border"></div>
+
+                                    <div class="col-sm-5 col-xs-6 tital " >Apellido:</div><div class="col-sm-7"> {{securityDataUser.apellido_jugador}}</div>
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border"></div>
+
+                                    <div class="col-sm-5 col-xs-6 tital " >Nickname:</div><div class="col-sm-7">{{securityDataUser.nickname_jugador}}</div>
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border"></div>
+
+                                    <div class="col-sm-5 col-xs-6 tital " >Email:</div><div class="col-sm-7">{{securityDataUser.email}}</div>
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border"></div>
+
+                                    <div class="col-sm-5 col-xs-6 tital " >Fecha de Nacimiento:</div><div class="col-sm-7">{{securityDataUser.fecha_nacimiento}}</div>
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border"></div>
+
+                                    <div class="col-sm-5 col-xs-6 tital " >Numero de Telefono:</div><div class="col-sm-7">{{securityDataUser.telefono_jugador}}</div>
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border"></div>
+
+                                    <div class="col-sm-5 col-xs-6 tital " >Pais:</div><div class="col-sm-7">{{securityDataUser.pais_jugador}}</div>
+                                    <div class="clearfix"></div>
+                                    <div class="bot-border"></div>
+
+                                    <div class="col-sm-5 col-xs-6 tital " >Direccion:</div><div class="col-sm-7">{{securityDataUser.direccion}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+            </div>
+        </div>
+    </div>
+</div>

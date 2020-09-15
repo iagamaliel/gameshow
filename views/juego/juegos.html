@@ -1,0 +1,60 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Juegos</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="#/">Inicio</a>
+            </li>
+            <li>
+                <a>Juegos</a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="juegoCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Listado de juegos</h5>
+                    <div class="ibox-tools">
+                        <a href="" class="btn btn-primary btn-xs" ng-click="nuevoJuego()">Nuevo Juego</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row m-b-sm m-t-sm">
+                        <div class="col-lg-12">
+                            <div class="input-group"><input type="text" placeholder="Buscar" class="input-sm form-control" ng-model="query"> <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-primary">Buscar</button> </span>
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="project-list">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Activo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="juego in juegos | filter: query track by $index">
+                                    <td class="project-title"><span class="pie">{{juego.nombre_juego}}</span></td>
+                                    <td class="project-title"><span class="label {{cssEstado(juego.activo)}}">{{etiquetaEstado(juego.activo)}}</span></td>
+                                    <td class="text-navy">
+                                        <button type="button" class="btn btn-xs btn-default" ng-click="seleccionarJuego(juego)">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
